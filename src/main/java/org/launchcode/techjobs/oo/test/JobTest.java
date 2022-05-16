@@ -37,6 +37,6 @@ public class JobTest {
         assert aJob instanceof Job;
 
     }
-    
+
 }
 
