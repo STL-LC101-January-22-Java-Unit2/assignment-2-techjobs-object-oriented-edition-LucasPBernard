@@ -17,8 +17,9 @@ public class JobTest {
         Job test_job_01 = new Job();
         Job test_job_02 = new Job();
 
-//        assertEquals(test_job_01.getId(),1);
-//        assertEquals(test_job_02.getId(),2);
+        //Use assertNotEquals to verify that the IDs of the two objects are distinct.
+        assertNotEquals(test_job_01.getId(),test_job_02.getId());
+
         //job increments by 1 each new job
         assertTrue(test_job_02.getId()== test_job_01.getId()+1);
         //2 new jobs are not equal
@@ -28,6 +29,7 @@ public class JobTest {
     public void testJobConstructorSetsAllFields() {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         //nothing is blank
+        assertTrue((aJob.getId())==1);
         assertTrue((!aJob.getName().isBlank()));
         assertTrue((!aJob.getEmployer().getValue().isBlank()));
         assertTrue((!aJob.getLocation().getValue().isBlank()));
@@ -39,18 +41,18 @@ public class JobTest {
         assertEquals(aJob.getLocation().getValue(),"Desert");
         assertEquals(aJob.getPositionType().getValue(),"Quality control");
         assertEquals(aJob.getCoreCompetency().getValue(),"Persistence");
-        //object is correct class
+        //job object is correct class
         assert aJob instanceof Job;
+
     }
 
     @Test
     public void testJobsForEquality() {
+        //Generate two Job objects that have identical field values EXCEPT for id. Test that equals returns false
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job anotherJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertFalse(aJob==anotherJob);
-        System.out.println(aJob);
-        System.out.println(anotherJob);
 
     }
 
