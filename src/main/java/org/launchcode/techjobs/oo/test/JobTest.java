@@ -64,9 +64,12 @@ public class JobTest {
     public void testToStringStartsAndEndsWithNewLine() {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = aJob.toString().charAt(0);
-        char secondChar = aJob.toString().charAt(aJob.toString().length()-1);
-        //assertEquals();
+        char lastChar = aJob.toString().charAt(aJob.toString().length()-1);
+        assertEquals(Character.toString(firstChar), "\\");
+        assertEquals(Character.toString(lastChar), "n");
+
     }
+
 
 }
 
