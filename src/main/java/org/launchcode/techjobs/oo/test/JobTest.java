@@ -65,8 +65,8 @@ public class JobTest {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = aJob.toString().charAt(0);
         char lastChar = aJob.toString().charAt(aJob.toString().length()-1);
-        assertEquals(Character.toString(firstChar), "\\");
-        assertEquals(Character.toString(lastChar), "n");
+        assertEquals(Character.toString(firstChar), "\n");
+        assertEquals(Character.toString(lastChar), "\n");
 
     }
 

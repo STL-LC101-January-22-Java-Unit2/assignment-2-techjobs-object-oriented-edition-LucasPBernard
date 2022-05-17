@@ -97,6 +97,7 @@ public class Job {
 
     @Override
     public String toString() {
-        return "\\n";
+        return "\n" +
+                "some words\n";
     }
 }
