@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
+import javax.swing.text.Position;
+
 import static org.junit.Assert.*;
 
 /**
@@ -35,12 +37,14 @@ public class JobTest {
         assertTrue((!aJob.getLocation().getValue().isBlank()));
         assertTrue((!aJob.getPositionType().getValue().isBlank()));
         assertTrue((!aJob.getCoreCompetency().getValue().isBlank()));
+
         //constructor is constructing properly
         assertEquals(aJob.getName(),"Product tester");
         assertEquals(aJob.getEmployer().getValue(),"ACME");
         assertEquals(aJob.getLocation().getValue(),"Desert");
         assertEquals(aJob.getPositionType().getValue(),"Quality control");
         assertEquals(aJob.getCoreCompetency().getValue(),"Persistence");
+
         //job object is correct class
         assert aJob instanceof Job;
 
@@ -54,6 +58,11 @@ public class JobTest {
 
         assertFalse(aJob==anotherJob);
 
+    }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        assertEquals();
     }
 
 }
