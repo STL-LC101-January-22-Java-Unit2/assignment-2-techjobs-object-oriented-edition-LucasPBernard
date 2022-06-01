@@ -7,6 +7,8 @@ import org.launchcode.techjobs.oo.*;
 
 import javax.swing.text.Position;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.*;
 
 /**
@@ -83,8 +85,10 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-
-
+        //Job job = new Job();
+        Job job2 = new Job(null, null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        HashMap<String,String> list = new HashMap<>();
+        assertEquals(job2.getEmployer(),list.get("Employer"));
     }
 
 

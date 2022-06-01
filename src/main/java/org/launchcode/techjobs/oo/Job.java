@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Job {
@@ -97,8 +98,17 @@ public class Job {
 
     @Override
     public String toString() {
-        if (this.getName()==null) {
+        Job job3 = new Job();
+        String dataNotAvailable = "Data not available";
+
+        if (this.getName()==null && this.getEmployer()==null && this.getLocation()==null && this.getPositionType()==null && this.getCoreCompetency()==null) {
             return "OOPS! This job does not seem to exist.";
+        }
+
+        HashMap <String,String> list = new HashMap<>();
+        if(this.getEmployer()==null) {
+            list.put("Employer", dataNotAvailable);
+            return list.get("Employer");
         }
 
         return "\n" +
