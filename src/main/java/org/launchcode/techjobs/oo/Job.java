@@ -97,6 +97,10 @@ public class Job {
 
     @Override
     public String toString() {
+        if (this.getName()==null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+
         return "\n" +
                 "ID: " + this.getId() + "\n"+
                 "Name: " + this.getName() + "\n"+
@@ -106,4 +110,5 @@ public class Job {
                 "Core Competency: " + this.getCoreCompetency()+
                 "\n";
     }
+
 }
