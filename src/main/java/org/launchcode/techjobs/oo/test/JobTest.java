@@ -70,6 +70,14 @@ public class JobTest {
 
     }
 
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        //System.out.println(aJob.toString());
+        assertTrue(aJob.toString().contains("words"));
+        //assertEquals("Product tester", aJob.toString());
+    }
+
 
 }
 
