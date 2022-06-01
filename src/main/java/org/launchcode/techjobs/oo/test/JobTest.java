@@ -73,10 +73,17 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String testChar = "N";
-        String testChar2 = "P";
-        assertEquals(testChar.charAt(0), aJob.toString().charAt(7));
-        assertEquals(testChar2.charAt(0), aJob.toString().charAt(13));
+        String testLetter = "N";
+        String testLetter2 = "P";
+        assertTrue(aJob.toString().contains("Product tester"));
+        assertEquals(testLetter.charAt(0), aJob.toString().charAt(7));
+        assertEquals(testLetter2.charAt(0), aJob.toString().charAt(13));
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        
 
     }
 
