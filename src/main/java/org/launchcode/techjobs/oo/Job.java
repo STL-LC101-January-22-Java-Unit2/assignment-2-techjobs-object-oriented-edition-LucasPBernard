@@ -98,8 +98,6 @@ public class Job {
 
     @Override
     public String toString() {
-        //Job job3 = new Job();
-        //Job job2 = new Job(null, null, null, new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String parsedName = ("".equals(this.getName()) || this.getName() == null) ?  "Data not available" : this.getName();
         String parsedEmployer = ("".equals(this.getEmployer()) || this.getEmployer() == null) ?  "Data not available" : this.getEmployer().toString();
         String parsedLocation = ("".equals(this.getLocation()) || this.getLocation() == null) ?  "Data not available" : this.getLocation().toString();
