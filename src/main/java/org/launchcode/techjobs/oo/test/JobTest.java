@@ -85,10 +85,11 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        //Job job = new Job();
-        Job job2 = new Job(null, null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        HashMap<String,String> list = new HashMap<>();
-        assertEquals(job2.getEmployer(),list.get("Employer"));
+        Job job = new Job();
+        Job job2 = new Job(null, null, null, new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertTrue(job2.toString().contains("Data not available"));
+        //System.out.println(job2.toString());
+
     }
 
 

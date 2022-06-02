@@ -98,26 +98,25 @@ public class Job {
 
     @Override
     public String toString() {
-        Job job3 = new Job();
-        String dataNotAvailable = "Data not available";
+        //Job job3 = new Job();
+        //Job job2 = new Job(null, null, null, new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String parsedName = ("".equals(this.getName()) || this.getName() == null) ?  "Data not available" : this.getName();
+        String parsedEmployer = ("".equals(this.getEmployer()) || this.getEmployer() == null) ?  "Data not available" : this.getEmployer().toString();
+        String parsedLocation = ("".equals(this.getLocation()) || this.getLocation() == null) ?  "Data not available" : this.getLocation().toString();
+        String parsedPositionType = ("".equals(this.getPositionType()) || this.getPositionType() == null) ?  "Data not available" : this.getPositionType().toString();
+        String parsedCoreCompetency = ("".equals(this.getCoreCompetency()) || this.getCoreCompetency() == null) ?  "Data not available" : this.getCoreCompetency().toString();
 
         if (this.getName()==null && this.getEmployer()==null && this.getLocation()==null && this.getPositionType()==null && this.getCoreCompetency()==null) {
             return "OOPS! This job does not seem to exist.";
         }
 
-        HashMap <String,String> list = new HashMap<>();
-        if(this.getEmployer()==null) {
-            list.put("Employer", dataNotAvailable);
-            return list.get("Employer");
-        }
-
         return "\n" +
-                "ID: " + this.getId() + "\n"+
-                "Name: " + this.getName() + "\n"+
-                "Employer: " + this.getEmployer() + "\n"+
-                "Location: " + this.getLocation() + "\n"+
-                "Position Type: " + this.getPositionType() + "\n"+
-                "Core Competency: " + this.getCoreCompetency()+
+                "ID: " + this.getId()+
+                "\nName: " + parsedName+
+                "\nEmployer: " + parsedEmployer+
+                "\nLocation: " + parsedLocation+
+                "\nPosition Type: " + parsedPositionType+
+                "\nCore Competency: " + parsedCoreCompetency+
                 "\n";
     }
 
