@@ -99,10 +99,10 @@ public class Job {
     @Override
     public String toString() {
         String parsedName = ("".equals(this.getName()) || this.getName() == null) ?  "Data not available" : this.getName();
-        String parsedEmployer = ("".equals(this.getEmployer()) || this.getEmployer() == null) ?  "Data not available" : this.getEmployer().toString();
-        String parsedLocation = ("".equals(this.getLocation()) || this.getLocation() == null) ?  "Data not available" : this.getLocation().toString();
-        String parsedPositionType = ("".equals(this.getPositionType()) || this.getPositionType() == null) ?  "Data not available" : this.getPositionType().toString();
-        String parsedCoreCompetency = ("".equals(this.getCoreCompetency()) || this.getCoreCompetency() == null) ?  "Data not available" : this.getCoreCompetency().toString();
+        String parsedEmployer = (this.getEmployer() == null) ?  "Data not available" : this.getEmployer().toString();
+        String parsedLocation = (this.getLocation() == null) ?  "Data not available" : this.getLocation().toString();
+        String parsedPositionType = (this.getPositionType() == null) ?  "Data not available" : this.getPositionType().toString();
+        String parsedCoreCompetency = (this.getCoreCompetency() == null) ?  "Data not available" : this.getCoreCompetency().toString();
 
         if (this.getName()==null && this.getEmployer()==null && this.getLocation()==null && this.getPositionType()==null && this.getCoreCompetency()==null) {
             return "OOPS! This job does not seem to exist.";
