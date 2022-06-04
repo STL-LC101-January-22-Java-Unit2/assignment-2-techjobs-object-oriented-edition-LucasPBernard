@@ -3,7 +3,7 @@ package org.launchcode.techjobs.oo;
 
 public abstract class JobField {
 
-    private int id;
+    private static int id;
     private static int nextId = 1;
     private String value;
 
@@ -16,7 +16,7 @@ public abstract class JobField {
         this.value = value;
     }
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
