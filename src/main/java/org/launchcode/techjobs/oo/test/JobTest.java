@@ -92,8 +92,8 @@ public class JobTest {
         assertEquals(job2.getPositionType(),"Quality control");
         assertTrue(job2.toString().contains("Data not available"));
 
-        System.out.println(job.toString());
-        System.out.println(job2.toString());
+//        System.out.println(job.toString());
+//        System.out.println(job2.toString());
 
     }
 
