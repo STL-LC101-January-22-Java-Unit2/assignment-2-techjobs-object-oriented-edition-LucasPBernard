@@ -80,6 +80,9 @@ public class JobTest {
         assertTrue(aJob.toString().contains("Product tester"));
         assertEquals(testLetter.charAt(0), aJob.toString().charAt(7));
         assertEquals(testLetter2.charAt(0), aJob.toString().charAt(13));
+        assertEquals(testLetter2.charAt(0), aJob.toString().charAt(108));
+//        System.out.println(aJob.toString().charAt(108));
+//        System.out.println(aJob.toString());
 
     }
 
