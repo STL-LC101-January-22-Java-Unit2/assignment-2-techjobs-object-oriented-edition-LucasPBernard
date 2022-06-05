@@ -96,6 +96,7 @@ public class JobTest {
         assertEquals(job.toString(),"OOPS! This job does not seem to exist.");
         assertEquals(job2.getPositionType().toString(),"Quality control");
         assertTrue(job2.toString().contains("Data not available"));
+        //System.out.println(job2.getEmployer().toString());
 
 //        System.out.println(job.toString());
 //        System.out.println(job2.toString());
