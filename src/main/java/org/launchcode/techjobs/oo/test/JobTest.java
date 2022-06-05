@@ -5,10 +5,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
-import javax.swing.text.Position;
-
-import java.util.HashMap;
-
 import static org.junit.Assert.*;
 
 /**
@@ -33,7 +29,6 @@ public class JobTest {
     public void testJobConstructorSetsAllFields() {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         //nothing is blank
-        //assertTrue((aJob.getId())==1);
         assertTrue((!aJob.getName().isBlank()));
         assertTrue((!aJob.getEmployer().getValue().isBlank()));
         assertTrue((!aJob.getLocation().getValue().isBlank()));
@@ -86,16 +81,13 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job job = new Job();
         Job job2 = new Job(null, new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job job3 = new Job("Product tester",null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertNull(job2.getName());
         assertEquals(job2.toString().charAt(13),'D');
         assertEquals(job2.getPositionType().toString(),"Quality control");
         assertEquals(job2.getEmployer().toString(),"ACME");
         assertTrue(job2.toString().contains("Data not available"));
-        //assertTrue(job3.toString().contains("Data not available"));
-        //assertTrue(job.toString().equals("OOPS! This job does not seem to exist."));
+
     }
 
 
