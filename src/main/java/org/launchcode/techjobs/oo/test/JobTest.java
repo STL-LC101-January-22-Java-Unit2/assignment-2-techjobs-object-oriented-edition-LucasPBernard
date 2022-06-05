@@ -67,10 +67,12 @@ public class JobTest {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = aJob.toString().charAt(0);
         char lastChar = aJob.toString().charAt(aJob.toString().length()-1);
+        String firstCharString = Character.toString(firstChar);
+        String lastCharString = Character.toString(lastChar);
         assertEquals(Character.toString(firstChar), "\n");
         assertEquals(Character.toString(lastChar), "\n");
-        assertEquals('\n', '\n');
-        assertEquals('\n', '\n');
+        assertEquals(firstCharString,'\n');
+        assertEquals(lastCharString,'\n');
     }
 
     @Test
