@@ -81,6 +81,7 @@ public class JobTest {
         assertEquals(testLetter.charAt(0), aJob.toString().charAt(7));
         assertEquals(testLetter2.charAt(0), aJob.toString().charAt(13));
         assertEquals(testLetter2.charAt(0), aJob.toString().charAt(108));
+        assertEquals(aJob.getEmployer().toString(),"ACME");
 //        System.out.println(aJob.toString().charAt(108));
 //        System.out.println(aJob.toString());
 
