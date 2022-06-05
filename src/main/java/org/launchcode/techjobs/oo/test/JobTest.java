@@ -67,10 +67,9 @@ public class JobTest {
         Job aJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = aJob.toString().charAt(0);
         char lastChar = aJob.toString().charAt(aJob.toString().length()-1);
-        assertEquals(Character.toString(firstChar), "\n");
-        assertEquals(Character.toString(lastChar), "\n");
-        assertEquals('\n', '\n');
-        assertEquals('\n', '\n');
+        assertEquals(firstChar, '\n');
+        assertEquals(lastChar, '\n');
+        System.out.println(firstChar);
     }
 
     @Test
@@ -93,15 +92,10 @@ public class JobTest {
         Job job = new Job();
         Job job2 = new Job(null, new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job3 = new Job("Product tester",null, new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals(job2.toString(),"\nID: 2\n" +
-                "Name: Data not available\n" +
-                "Employer: ACME\n" +
-                "Location: Desert\n" +
-                "Position Type: Quality control\n" +
-                "Core Competency: Persistence\n");
+        assertNull(job2.getName());
+        assertEquals(job2.toString().charAt(13),'D');
         assertEquals(job2.getPositionType().toString(),"Quality control");
         assertEquals(job2.getEmployer().toString(),"ACME");
-        assertNull(job2.getName());
         assertTrue(job2.toString().contains("Data not available"));
         //assertTrue(job3.toString().contains("Data not available"));
         //assertTrue(job.toString().equals("OOPS! This job does not seem to exist."));
