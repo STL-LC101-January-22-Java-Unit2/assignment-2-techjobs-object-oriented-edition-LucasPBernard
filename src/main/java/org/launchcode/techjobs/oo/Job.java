@@ -99,7 +99,7 @@ public class Job {
     @Override
     public String toString() {
         String parsedName = ("".equals(this.getName()) || this.getName() == null) ?  "Data not available" : this.getName();
-        String parsedEmployer = ("".equals(this.getEmployer().toString()) || this.getEmployer() == null) ?  "Data not available" : this.getEmployer().toString();
+        String parsedEmployer = ("".equals(this.getEmployer().toString()) || this.getEmployer() == null || this.getEmployer().toString().equals("")) ?  "Data not available" : this.getEmployer().toString();
         String parsedLocation = ("".equals(this.getLocation().toString()) || this.getLocation() == null) ?  "Data not available" : this.getLocation().toString();
         String parsedPositionType = ("".equals(this.getPositionType().toString()) || this.getPositionType() == null) ?  "Data not available" : this.getPositionType().toString();
         String parsedCoreCompetency = ("".equals(this.getCoreCompetency().toString()) || this.getCoreCompetency() == null) ?  "Data not available" : this.getCoreCompetency().toString();
